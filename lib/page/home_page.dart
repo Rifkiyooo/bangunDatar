@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rifki/page/persegi_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +19,13 @@ class HomePage extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/persegi.jpg",title: "Persegi",)),
+              Expanded(child: InkWell(
+                  child: CustomMenu(imageAsset: "assets/persegi.jpg",title: "Persegi",),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                },
+              ),
+              ),
               Expanded(child: CustomMenu(imageAsset: "assets/persegi.jpg",title: "Persegi",))
             ],
           ),
